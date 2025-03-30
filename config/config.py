@@ -13,8 +13,8 @@ class Config:
     DEBUG = os.getenv("DEBUG", "False").lower() == "true" 
 
     # Model paths
-    YOLO_MODEL_PATH = os.getenv("YOLO_MODEL_PATH", "C:/Users/Administrator/work/faceblur/core/yolov8n-face.pt")
-    TEST_SOURCE1 = os.getenv('TEST_SOURCE1',r'C:\Users\Administrator\work\yolo_v8_realtime_face_blur\tests\walk.mp4')
+    YOLO_MODEL_PATH = os.getenv("YOLO_MODEL_PATH", r"C:\Users\Administrator\work\Blur\face_blur\app\Assets\yolov8n-face.pt")
+    TEST_SOURCE1 = os.getenv('TEST_SOURCE1',r'C:\Users\Administrator\work\Blur\face_blur\app\Assets\walk.mp4')
     # Video streaming settings
     DEFAULT_VIDEO_SOURCE = os.getenv("DEFAULT_VIDEO_SOURCE", "0")
     FRAME_WIDTH = int(os.getenv("FRAME_WIDTH", 1000))
