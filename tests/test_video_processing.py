@@ -16,8 +16,7 @@ class TestCustomVideoCapture(unittest.TestCase):
     @patch('cv2.VideoCapture')
     def test_valid_video_source_initialization(self, mock_videocap):
         mock_videocap.return_value.isOpened.return_value = True
-        video_capture = CustomVideoCapture(src=r'C:\Users\Administrator\work\Blur\face_blur\app\Assets\walk.mp4')
-        # video_capture = CustomVideoCapture(src=config.TEST_SOURCE1)
+        video_capture = CustomVideoCapture(src=config.TEST_SOURCE1)
         self.assertTrue(video_capture.cap.isOpened())
 
     @patch('cv2.VideoCapture')
