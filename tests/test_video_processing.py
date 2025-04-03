@@ -63,7 +63,7 @@ class TestCustomVideoCapture(unittest.TestCase):
         mock_videocap.return_value.isOpened.return_value = True
         mock_videocap.return_value.read.return_value = (False, None)
         
-        video_capture = CustomVideoCapture(src=config.TEST_SOURCE1)
+        video_capture = CustomVideoCapture(r'C:\Users\Administrator\work\Blur\face_blur\app\Assets\walk.mp4')
         stream_generator = video_capture.video_stream()
         
         with self.assertRaises(StopIteration):
