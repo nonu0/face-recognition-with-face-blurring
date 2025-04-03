@@ -16,7 +16,7 @@ class TestCustomVideoCapture(unittest.TestCase):
     @patch('cv2.VideoCapture')
     def test_valid_video_source_initialization(self, mock_videocap):
         mock_videocap.return_value.isOpened.return_value = True
-        video_capture = CustomVideoCapture(src=config.TEST_SOURCE1)
+        video_capture = CustomVideoCapture(r'C:\Users\Administrator\work\Blur\face_blur\app\Assets\walk.mp4')
         self.assertTrue(video_capture.cap.isOpened())
 
     @patch('cv2.VideoCapture')
@@ -47,7 +47,7 @@ class TestCustomVideoCapture(unittest.TestCase):
         mock_model.track.return_value = [MagicMock()]
         mock_load_model.return_value = mock_model
 
-        video_capture = CustomVideoCapture(src=config.TEST_SOURCE1)
+        video_capture = CustomVideoCapture(r'C:\Users\Administrator\work\Blur\face_blur\app\Assets\walk.mp4')
         
         stream_generator = video_capture.video_stream()
 
