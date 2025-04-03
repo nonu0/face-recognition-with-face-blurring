@@ -26,9 +26,17 @@ class CustomVideoCapture:
         if not self.cap.isOpened():
             raise HTTPException(status_code=400, detail="Could not open video source")
 
+    # def _decode_src(self, src):
+    #     source = urllib.parse.unquote(src).strip()
+    #     if source.isdigit():  
+    #         return int(source)  # Convert "0" to integer for webcam
+    #     elif os.path.isfile(source):  # Check if file exists
+    #         return source
+    #     else:
+            # raise HTTPException(status_code=400, detail=f"Invalid video source: {source}")
     def _decode_src(self, src):
-        source = urllib.parse.unquote(src).strip()
-        if source.isdigit():  
+        source = os.path.normpath(urllib.parse.unquote(src)).strip()
+        if source.isdigit():
             return int(source)  # Convert "0" to integer for webcam
         elif os.path.isfile(source):  # Check if file exists
             return source
